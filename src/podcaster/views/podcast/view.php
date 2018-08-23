@@ -19,7 +19,6 @@ use yii\widgets\DetailView;
 /* @var $model \webkadabra\podcaster\models\PodcastEpisode */
 
 $this->title = Yii::t('app', $model->title);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Episodes'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $model->title;
 ?>
 <div class="row">
