@@ -84,7 +84,7 @@ if ($buttons = $model->getEpisodeControls()) {
                 <span class="text-uppercase"><?=Yii::t('app', 'Show Notes')?></span>
 
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="<?=\yii\helpers\Url::to(['/podcaster/shownote/episode', 'id' => $model->id])?>">Открыть</a>
+                    <a class="btn btn-primary" href="<?=\yii\helpers\Url::to(['/podcaster/shownote/episode', 'id' => $model->id])?>"><?=Yii::t('app', 'View')?></a>
                 </div>
             </div>
         </div>

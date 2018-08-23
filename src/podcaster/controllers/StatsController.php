@@ -38,10 +38,10 @@ class StatsController extends \webkadabra\podcaster\components\Controller
 
     public function actionDaily()
     {
-        $this->view->title = 'Слушатели по датам';
+        $this->view->title = Yii::t('app', 'Daily downloads');
         $this->view->params['breadcrumbs'][] = [
             'url' => ['index'],
-            'label' => 'Статистика',
+            'label' => Yii::t('app', 'Stats'),
         ];
         $this->view->params['breadcrumbs'][] = $this->view->title;
         return $this->render('daily',[
@@ -51,10 +51,10 @@ class StatsController extends \webkadabra\podcaster\components\Controller
 
     public function actionWeekly()
     {
-        $this->view->title = 'Слушатели по неделям';
+        $this->view->title = Yii::t('app', 'Weekly downloads');
         $this->view->params['breadcrumbs'][] = [
             'url' => ['index'],
-            'label' => 'Статистика',
+            'label' => Yii::t('app', 'Stats'),
         ];
         $this->view->params['breadcrumbs'][] = $this->view->title;
         return $this->render('daily',[
@@ -63,10 +63,10 @@ class StatsController extends \webkadabra\podcaster\components\Controller
     }
     public function actionMonthly()
     {
-        $this->view->title = 'Слушатели по месяцам';
+        $this->view->title = Yii::t('app', 'Monthly downloads');
         $this->view->params['breadcrumbs'][] = [
             'url' => ['index'],
-            'label' => 'Статистика',
+            'label' => Yii::t('app', 'Stats'),
         ];
         $this->view->params['breadcrumbs'][] = $this->view->title;
         return $this->render('daily',[

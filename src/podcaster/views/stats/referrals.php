@@ -24,7 +24,7 @@ use kartik\grid\GridView;
                             'format' => 'raw',
                             'value' => function ($model, $key, $index, $column) {
                                 if (!$model[$column->attribute]) {
-                                    return '<span title="Неизвестный рефер или клиент">UNKNOWN</span>';
+                                    return '<span title="'.Yii::t('app', 'Unknown client').'">UNKNOWN</span>';
                                 }
                                 return \yii\helpers\Html::a($model[$column->attribute],
                                     \yii\helpers\Url::to(['/'.$this->context->module->id.'/stats/day', 'date' =>$model[$column->attribute]]));

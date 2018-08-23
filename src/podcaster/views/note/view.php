@@ -58,10 +58,7 @@
                 'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
                 'method' => 'post',
             ],
-            'onmouseover' => "$('#deleteHint').show()",
-            'onmouseout' => "$('#deleteHint').hide()",
         ]) ?>
-        <span id="deleteHint" style="display: none">← Удаление черновика</span>
 
     </div>
 </div>

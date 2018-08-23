@@ -34,12 +34,8 @@ echo \yii\helpers\Html::a('<i class="fa fa-plus"></i> Upload', ['create',  ],['c
                         ];
                         $out[] = Html::tag('span', implode(' ', [
                             $model->title,
-                        ]), ['title' => 'Название']);
+                        ]), ['title' => Yii::t('app', 'Title')]);
                         $out[] = $model->description;
-//                        $out[] = Html::tag('span', implode(' ', [
-//                            $model->client_first_name,
-//                            $model->client_last_name,
-//                        ]), ['title' => 'Плательщик']);
                         return $out ? implode('<br />', $out) : '';
                     }
                 ],

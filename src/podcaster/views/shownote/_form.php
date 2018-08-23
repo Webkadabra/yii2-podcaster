@@ -42,7 +42,7 @@ $this->registerJs(
             <div class="clearfix">
 
                 <? if (isset($ok)) {
-                    echo '<div id="comment-success-alert" style="display: -inline-block" class="alert alert-info pull-left">Комментарий отправлен!</div>';
+                    echo '<div id="comment-success-alert" style="display: -inline-block" class="alert alert-info pull-left">'.Yii::t('app', 'Comment posted').'</div>';
                 } ?>
                 <div class="pull-right">
                     <?= Html::button('Submit', [

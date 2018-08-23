@@ -77,7 +77,7 @@ $resultsJs = "function (data, params) {return {results: data };}";
                     ]
                 ]); ?>
 
-                <?=Html::a('Изменить', ['create', 'id' => $model->id],
+                <?=Html::a(Yii::t('app', 'Add'), ['create', 'id' => $model->id],
                     ['class' => 'btn btn-default btn-sm']);?>
             </div>
         </div>
@@ -105,7 +105,7 @@ $resultsJs = "function (data, params) {return {results: data };}";
 
                     ]
                 ]); ?>
-                <?=Html::a('Изменить', ['create', 'id' => $model->id],
+                <?=Html::a(Yii::t('app', 'Create'), ['create', 'id' => $model->id],
                     ['class' => 'btn btn-default btn-sm']);?>
             </div>
             <hr />

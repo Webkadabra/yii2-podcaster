@@ -79,7 +79,7 @@ if ($lastTimecode) {
 <hr />
 
 <div class="container-fluid">
-    <h3 class="section-title">Комментарии</h3>
+    <h3 class="section-title"><?=Yii::t('app', 'Shownotes')?></h3>
 </div>
 <?=$this->render('_form',[
     'model' => new \webkadabra\podcaster\models\PodcastShownote(),
