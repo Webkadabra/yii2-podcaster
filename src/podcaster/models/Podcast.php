@@ -33,6 +33,7 @@ use yii\helpers\ArrayHelper;
  * @property string $marketing_hashtag
  * @property string $rss_description_append
  * @property int $published_yn
+ * @property int $web_list_yn
  */
 class Podcast extends \yii\db\ActiveRecord
 {
@@ -51,7 +52,7 @@ class Podcast extends \yii\db\ActiveRecord
     {
         return [
             [['description', 'rss_description_append'], 'string'],
-            [['itunes_explicit_yn', 'published_yn'], 'integer'],
+            [['itunes_explicit_yn', 'published_yn', 'web_list_yn'], 'integer'],
             [['alias'], 'string', 'max' => 30],
             [['title', 'author_name', 'author_email', 'default_artwork_url', 'website', 'defaultFeedUrl', 'itunes_category', 'itunes_artwork_url', 'marketing_tweet', 'marketing_hashtag'], 'string', 'max' => 255],
             [['language'], 'string', 'max' => 20],
@@ -80,6 +81,7 @@ class Podcast extends \yii\db\ActiveRecord
             'marketing_tweet' => Yii::t('app', 'Marketing Tweet'),
             'marketing_hashtag' => Yii::t('app', 'Marketing Hashtag'),
             'published_yn' => Yii::t('app', 'Published Yn'),
+            'web_list_yn' => Yii::t('app', 'Show on website'),
         ];
     }
 

@@ -59,32 +59,6 @@ class PodcastEpisode extends \yii\db\ActiveRecord
         ];
     }
 
-//    public function scenarios()
-//    {
-//        return [
-//            self::SCENARIO_FIRST_STEP_GUEST => ['client_email', 'client_phone', 'client_last_name', 'client_first_name',
-//                                                'shipping_city_id', 'typein_city', 'shipping_city', 'shipto_region', 'shipping_region_id', 'shipping_country_id',
-//                                                'shipping_address', 'shipping_address2', 'shipto_area', 'shipto_street_route', 'shipping_zip', 'shipto_street_number'],
-//            self::SCENARIO_FIRST_STEP => ['shipping_first_name', 'shipping_last_name', 'shipping_phone', 'shipping_city_id',
-//                                          'typein_city', 'shipping_city', 'shipto_region', 'shipping_region_id', 'shipping_country_id', 'shipping_address',
-//                                          'shipping_address2', 'shipto_area', 'shipto_street_route', 'shipping_zip', 'shipto_street_number', 'client_last_name',
-//                                          'client_first_name','client_phone',],
-//
-//            self::SCENARIO_MANUAL_CITY_FINDER => [
-//                /* 'typein_city', 'shipping_city', 'shipto_region',*/ 'shipping_region_id', 'shipping_city_id', 'shipping_country_id',
-//                'shipping_address2', 'shipto_area'],
-//
-//            self::SCENARIO_PICK_ADDRESS => ['pickAddressId'],
-//            self::SCENARIO_SHIPPING => ['shipping_first_name', 'shipping_last_name', 'shipping_phone',
-//                                        'shipping_method_id', 'payment_method_id', 'subscribe_email_digest_yn',
-//                                        'shipping_pickup_store_num', 'pickShippingWarehouse', 'shipping_address',   'shipping_address2',
-//                                        'shipping_zip',  'shipping_note', 'save_checkout_info_yn', 'please_contact_me_yn'],
-//            self::SCENARIO_CONFIRM => ['subscribe_email_digest_yn', 'save_checkout_info_yn', 'coupon_code_name', 'please_contact_me_yn'],
-//            self::SCENARIO_BILLING => ['payment_method_id', 'client_last_name', 'client_first_name', 'client_phone'],
-//            self::SCENARIO_BILLING_GUEST => ['payment_method_id', 'client_last_name', 'client_first_name', 'client_phone', 'client_email'],
-//        ];
-//    }
-
     /**
      * @inheritdoc
      */

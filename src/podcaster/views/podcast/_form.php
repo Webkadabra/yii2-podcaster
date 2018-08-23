@@ -39,6 +39,16 @@ $resultsJs = "function (data, params) {return {results: data };}";
         'staticOnly'=>$staticOnly,
         'columns'=>1,
         'attributes'=>[
+            'published_yn'=>['type'=>Form::INPUT_CHECKBOX],
+            'web_list_yn'=>['type'=>Form::INPUT_CHECKBOX],
+        ]
+    ]); ?>
+    <?  echo Form::widget([
+        'model'=>$model,
+        'form'=>$form,
+        'staticOnly'=>$staticOnly,
+        'columns'=>1,
+        'attributes'=>[
             'language'=>[
                  'type'=>Form::INPUT_TEXT,
                 'hint' => 'e.g. en-us, ru-ru'
@@ -65,15 +75,7 @@ $resultsJs = "function (data, params) {return {results: data };}";
         ]
     ]); ?>
     <hr/>
-    <?  echo Form::widget([
-        'model'=>$model,
-        'form'=>$form,
-        'staticOnly'=>$staticOnly,
-        'columns'=>1,
-        'attributes'=>[
-            'published_yn'=>['type'=>Form::INPUT_CHECKBOX],
-        ]
-    ]); ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Continue') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
