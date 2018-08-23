@@ -7,6 +7,7 @@
 * Tool to create episodes’ show notes: just write comment as you listen to the podcast, and a timestamp will be automatically added to the note
 * Podcast notes
 * Generate XML/RSS feed for iTunes etc
+* Feedburner (or any external feed service) support
 
 *Additionally*, `podcaster` playback will continue to work and write stats even if your database is temporary down (e.g. your VPS is rebooting, or there is maintenance; see documentation below).
 
