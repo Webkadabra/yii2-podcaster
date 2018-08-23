@@ -1,0 +1,40 @@
+{
+  "name": "webkadabra/yii2-podcaster",
+  "description": "Yii 2 Podcast hosting module",
+  "keywords": ["yii2", "framework", "podcast"],
+  "homepage": "http://www.yiiframework.com/",
+  "type": "project",
+  "autoload" : {
+    "psr-4" : {
+      "webkadabra\\podcaster\\" : "src/podcaster"
+    }
+  },
+  "support": {},
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "^2.0",
+    "yiisoft/yii2-bootstrap": "*",
+    "creocoder/yii2-taggable": "dev-master",
+    "sjaakp/yii2-gcharts": "dev-master",
+    "kartik-v/yii2-grid": "^3.1",
+    "kartik-v/yii2-date-range": "^1.6",
+    "rmrevin/yii2-fontawesome": "^3.1",
+    "kartik-v/yii2-builder": "^1.6",
+    "kartik-v/yii2-widget-select2": "^2.1",
+    "kartik-v/yii2-datecontrol": "^1.9",
+    "kartik-v/yii2-widget-datetimepicker": "^1.4",
+    "zelenin/yii2-rss": "^0.1.1"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.0.0",
+    "yiisoft/yii2-gii": "~2.0.0"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    }
+  }
+}
