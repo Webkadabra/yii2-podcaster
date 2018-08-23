@@ -113,4 +113,12 @@ class Podcast extends \yii\db\ActiveRecord
         }
         return $model;
     }
+
+    public function getRssFeedUrl() {
+        if ($this->defaultFeedUrl) {
+            return $this->defaultFeedUrl; // e.g. if you have a feed on a Feedburner
+        } else {
+            return \yii\helpers\Url::to(['/podcaster/feed/feed', 'podcast' => ($this->alias ? $this->alias : $this->id)], true);
+        }
+    }
 }
