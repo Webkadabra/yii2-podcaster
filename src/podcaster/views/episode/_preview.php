@@ -27,7 +27,7 @@ $resultsJs = "function (data, params) {return {results: data };}";
                 <br />
                 <small class="text-muted" title="<?=$model->file->file_folder?>">File ID: <?=$model->file->id?></small>
                 <br />
-                <?=Html::a('Изменить', ['upload', 'id' => $model->id],
+                <?=Html::a(Yii::t('app', 'Update'), ['upload', 'id' => $model->id],
                     ['class' => 'btn btn-default btn-sm btn-outline']);?>
             </div>
         </div>
@@ -112,7 +112,7 @@ $resultsJs = "function (data, params) {return {results: data };}";
             <div class="form-inputs-block text-center">
                 <?= Html::submitButton('Publish', [
                     'data' => [
-                        'confirm' => Yii::t('app', 'Have you gots balls?!'),
+                        'confirm' => Yii::t('app', 'Are you sure? After publication, episode will appear in RSS feed of a podcast'),
                         'method' => 'post',
                     ],
                     'name' => 'publish',

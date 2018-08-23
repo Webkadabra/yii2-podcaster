@@ -45,10 +45,10 @@ if ($buttons = $model->getEpisodeControls()) {
         <?} ?>
         <div class="card">
             <div class="clearfix">
-                <h5 class="pull-right"><?=Html::a('Изменить', \yii\helpers\Url::toRoute(['update', 'id' => $model->id]), [
-                        'class' => 'btn-modal-control pull-right',
+                <?=Html::a(Yii::t('app', 'Update'), \yii\helpers\Url::toRoute(['update', 'id' => $model->id]), [
+                        'class' => 'btn-modal-control pull-right btn btn-default',
                         'data-ux-modal-type' => 'iframe',
-                    ])?></h5>
+                    ])?>
                 <h3 style="margin:0 0 15px 0"><?= Html::encode($model->displayTitle)?></h3>
                 <div class="form-control">
                     <?=Html::a('<i class="fa fa-share-square-o" aria-hidden="true"></i> '

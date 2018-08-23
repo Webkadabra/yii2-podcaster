@@ -139,11 +139,15 @@ class EpisodeController extends \webkadabra\podcaster\components\Controller
         $model = $this->findModel($id);
         $method = Yii::$app->request->isAjax ? 'renderAjax' : 'render';
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $app = Yii::$app;
-            $app->response->format = \yii\web\Response::FORMAT_JSON;
-            return [
-                'refreshPage' => true
-            ];
+            if (Yii::$app->request->isAjax) {
+                $app = Yii::$app;
+                $app->response->format = \yii\web\Response::FORMAT_JSON;
+                return [
+                    'refreshPage' => true
+                ];
+            } else {
+                return $this->refresh();
+            }
         } else {
             return '<div id="root">'.$this->$method('_form_update', [
                     'model' => $model,

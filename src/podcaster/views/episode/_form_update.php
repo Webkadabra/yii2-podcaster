@@ -41,7 +41,6 @@ $resultsJs = "function (data, params) {return {results: data };}";
                         'description'=>['type'=>Form::INPUT_TEXTAREA],
                         'link'=>['type'=>Form::INPUT_TEXT],
                         'youtube_video_id'=>['type'=>Form::INPUT_TEXT],
-                        'tagValues'=>['type'=>Form::INPUT_TEXT],
                         'pub_date' => [
                             'type'=>Form::INPUT_WIDGET,
                             //                'widgetClass'=>'\kartik\datecontrol\DateControl',
@@ -54,6 +53,24 @@ $resultsJs = "function (data, params) {return {results: data };}";
                         ],
                     ]
                 ]); ?>
+
+
+                <?php $tagVal = \yii\helpers\ArrayHelper::getColumn($model->tags, 'id');
+                echo $form->field($model, 'tagValues')->widget(\kartik\select2\Select2::class, [
+                    'data' => \yii\helpers\ArrayHelper::map(\webkadabra\podcaster\models\Tag::find()->orderBy('name ASC')->all(), 'name', 'name'),
+                    'options' => [
+                        'multiple' => true,
+                        'value' =>  \yii\helpers\ArrayHelper::getColumn($model->tags, 'name'),
+                        'initValueText' => $model->getTagValues(false),
+                    ],
+                    'pluginOptions' => [
+                        'allowClear' => false,
+                        'dropdownCssClass' => 'fresh--select2',
+                        'tags' => true,
+                        'tokenSeparators' => [','],
+                        'maximumInputLength' => 100
+                    ],
+                ])->hint($model->getAttributeLabel('tagValues')); ?>
             </div>
         </div>
     </div>

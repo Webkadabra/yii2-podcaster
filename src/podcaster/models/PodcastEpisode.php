@@ -262,22 +262,13 @@ class PodcastEpisode extends \yii\db\ActiveRecord
 
     public function getEpisodeControls() {
         $items = [];
-//        $items[] = [
-//            'label' => 'Отменить заказ...',
-//            'url' => \yii\helpers\Url::toRoute(['/orders/cancel','id' => $this->id]),
-//            'linkOptions' => [
-//                'class' => 'btn-modal-control'
-//                //                                'data-method' => 'post',
-//                //                                'data-confirm' => 'Вы уверены? ' . ($this->sms_sent_yn ? '<span class="label label-warning">Уведомления уже оптравлено</span>' : ''),
-//            ]
-//        ];
         $items[] = [
             'label' => 'Get *.MD',
             'url' => \yii\helpers\Url::toRoute(['/'.Yii::$app->controller->module->id.'/episode/summary-md','id' => $this->id]),
         ];
 
         return [
-            'label' => 'Меню',
+            'label' => Yii::t('app','More'),
             'encodeLabel' => false,
             'dropdown' => ['encodeLabels' => false,
                            'items' => $items,
