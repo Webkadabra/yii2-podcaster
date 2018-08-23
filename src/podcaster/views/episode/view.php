@@ -60,20 +60,13 @@ if ($buttons = $model->getEpisodeControls()) {
 
             <?= DetailView::widget([
                 'model' => $model,
-//                'columns' => [
-//                    [
-//                        'attribute' => 'date',
-//                        'format' => 'raw',
-//                        'value' => function ($model, $key, $index, $column) {
-//                            return \yii\helpers\Html::a($model->date, /*\yii\helpers\Url::to([
-//                                    '/'.$this->context->module->id.'/stats/episode-date',
-//                                    'id' =>$model->episode_id,'date' =>$model[$column->attribute],
-//                                ])*/ '');
-//                        },
-//                    ],[
-//                        'attribute' => 'total_sales',
-//                    ]
-//                ],
+                'attributes' => [
+                    'pub_date',
+                    'description',
+                    'status',
+                    'custom_artwork_url',
+                    'tagValues',
+                ]
             ]) ?>
             <br />
             <br />
@@ -94,7 +87,7 @@ if ($buttons = $model->getEpisodeControls()) {
 
 
     <div class="col-md-3">
-        <div class="card card-one text-center card-muted" style="background-color: #c5f3ec;">
+        <div class="card card-one text-center card-muted" style="background-color: #c5f3ec;padding:2rem;margin-bottom: 2rem;">
 
         <h3 style="font-size: 40px;
     padding: 7px;
