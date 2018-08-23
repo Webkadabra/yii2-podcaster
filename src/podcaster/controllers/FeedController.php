@@ -15,6 +15,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\helpers\Html;
 
 class FeedController  extends Controller
 {
@@ -103,13 +104,13 @@ class FeedController  extends Controller
                 },
                 'description' => function (\webkadabra\podcaster\models\PodcastEpisode $model, $widget, \Zelenin\Feed $feed) use ($podcast) {
 
-                    $base = yii\helpers\Html::img($model->getArtworkUrl())
-                        . yii\helpers\Html::tag('p', $model->description)
+                    $base = Html::img($model->getArtworkUrl())
+                        . Html::tag('p', $model->description)
                         .  ($model->rss_description_append
                             ? $model->rss_description_append
                             : $podcast->rss_description_append)
                     ;
-                    $out = yii\helpers\HtmlPurifier::process($base, [
+                    $out = \yii\helpers\HtmlPurifier::process($base, [
                         'AutoFormat.Linkify' => true,
                         'AutoFormat.AutoParagraph' => true,
                         'AutoFormat.RemoveEmpty' => true,
