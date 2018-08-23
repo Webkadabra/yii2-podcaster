@@ -17,21 +17,21 @@ $this->title = 'My Yii Application';
     <div class="body-content">
 
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <h2>Create podcasts</h2>
 
                 <p>Podcaster module support unlimited number of podcasts.</p>
 
                 <p><a class="btn btn-default" href="<?=\yii\helpers\Url::toRoute(['podcaster/podcast'])?>">Podcasts &raquo;</a></p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <h2>Upload episodes</h2>
 
                 <p>Podcaster supports MP3 podcasts. <br/> Ready to upload?</p>
 
                 <p><a class="btn btn-default" href="<?=\yii\helpers\Url::toRoute(['podcaster/episode'])?>">Episodes  &raquo;</a></p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <h2>Stats</h2>
 
                 <p>Check out how your podcasts are received by your audience.</p>
