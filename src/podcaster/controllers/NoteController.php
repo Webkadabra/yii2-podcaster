@@ -52,10 +52,13 @@ class NoteController extends \webkadabra\podcaster\components\Controller
         if (!Yii::$app->request->isPost) {
             if ($date) $model->event_date = $date;
             if ($episode) $model->episode_id = $episode;
-//            if ($podcast) $model->podcast_id = $podcast;
         }
-        $model->podcast_id = $this->module->podcast->id;
         if ($model->load(Yii::$app->request->post())) {
+            if ($model->episode_id) {
+                if ($epRecord = PodcastEpisode::find()->where(['id' => $episode])->one()) {
+                    $model->podcast_id = $epRecord->podcast_id;
+                }
+            }
             $model->owner_user_id = Yii::$app->user->id;
             if ($model->save()) {
                 $model->note = '';
@@ -67,7 +70,7 @@ class NoteController extends \webkadabra\podcaster\components\Controller
                         'ok' => 1,
                     ]);
                 else {
-
+                    return $this->redirect(['index']);
                 }
             }
         }
