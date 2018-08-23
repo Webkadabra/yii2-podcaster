@@ -29,9 +29,11 @@ $this->registerJs(
     <?php $form = ActiveForm::begin(['action'=>'/'.$this->context->module->id . '/shownote/create', 'options'=>['data-pjax'=> true]]); ?>
     <?=$form->errorSummary($model)?>
     <div class="media comment">
+        <?php if (method_exists(Yii::$app->user->identity, 'getAvatarUrl')) { ?>
         <div class="media-left media-top">
             <img style="width: 48px; height: 48px;" class="media-object"  src="<?=Yii::$app->user->identity->getAvatarUrl()?>" />
         </div>
+        <?php } ?>
         <div class="media-body">
             <?
             $staticOnly = false;
