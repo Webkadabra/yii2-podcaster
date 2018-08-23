@@ -41,6 +41,10 @@ class FeedController  extends Controller
     protected static function buildFeed($podcast, $dest) {
         $query = PodcastEpisode::find()->availableForPublic();
         if (is_numeric($podcast)) {
+            $podcastRecord = Podcast::find()->where(['id' => $podcast])->one();
+            if (!$podcastRecord) {
+                throw new NotFoundHttpException();
+            }
             $query->andWhere(['podcast_id' => $podcast]);
         } else {
             $podcastRecord = Podcast::find()->where(['alias' => $podcast])->one();
@@ -88,7 +92,7 @@ class FeedController  extends Controller
                 'title' => function ($widget, \Zelenin\Feed $feed) use ($podcast) {
                     $feed->addChannelTitle($podcast->title);
                 },
-                'link' => 'http://feeds.feedburner.com/sergiigama',
+                'link' => $podcastRecord->getRssFeedUrl(),
                 'description' => $podcast->description,
                 'language' => function ($widget, \Zelenin\Feed $feed) use ($podcast) {
                     foreach ($feed->getElementsByTagName('link') as $el ) {
