@@ -14,7 +14,11 @@
 
 $this->title = Yii::t('app', 'Episode {ep} Shownotes', ['ep' => '#' . $model->displayTitle]);
 $this->params['breadcrumbs'][] = [
-        'label' =>  Yii::t('app', 'Episode {ep}', ['ep' => '#' . $model->displayTitle]),
+    'label' =>  $model->podcast->title,
+    'url' => ['/'.$this->context->module->id.'/podcast/view', 'id' => $model->podcast->id]];
+
+$this->params['breadcrumbs'][] = [
+    'label' =>  Yii::t('app', 'Episode {ep}', ['ep' => '#' . $model->displayTitle]),
     'url' => ['/'.$this->context->module->id.'/episode/view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Show Notes');
 
@@ -58,13 +62,13 @@ foreach ($notesDataProvider->models as $node) {
 
 
 
-<audio id="player" preload="none" controls style="max-width: 100%;width: 100%">
-    <source src="<?=$model->backendDownloadUrl?>" type="audio/mp3">
-</audio>
+    <audio id="player" preload="none" controls style="max-width: 100%;width: 100%">
+        <source src="<?=$model->backendDownloadUrl?>" type="audio/mp3">
+    </audio>
 
-<br />
-<span class="label label-default" id="total_duration"></span>
-<span class="label label-default" id="current_time"></span>
+    <br />
+    <span class="label label-default" id="total_duration"></span>
+    <span class="label label-default" id="current_time"></span>
 <?php
 if ($lastTimecode) {
     echo \yii\helpers\Html::a('Set Time To '.$lastTimecode, '', [
@@ -74,13 +78,13 @@ if ($lastTimecode) {
     ]);
 }
 ?>
-<span class="label label-default"><?=\yii\helpers\Html::a($model->backendDownloadUrl, $model->backendDownloadUrl, ['target' => '_blank'])?></span>
+<?=\yii\helpers\Html::a('<span class="label label-default">'.$model->backendDownloadUrl.'</span>', $model->backendDownloadUrl, ['target' => '_blank'])?>
 
-<hr />
+    <hr />
 
-<div class="container-fluid">
-    <h3 class="section-title"><?=Yii::t('app', 'Shownotes')?></h3>
-</div>
+    <div class="container-fluid">
+        <h3 class="section-title"><?=Yii::t('app', 'Shownotes')?></h3>
+    </div>
 <?=$this->render('_form',[
     'model' => new \webkadabra\podcaster\models\PodcastShownote(),
     'order' => $model,
