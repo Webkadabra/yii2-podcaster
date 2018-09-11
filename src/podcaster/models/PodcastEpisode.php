@@ -31,6 +31,8 @@ use yii\helpers\Url;
  * @property string $link
  * @property string $length_bytes
  * @property string $raw_tags
+ *
+ * @property Podcast $podcast
  */
 class PodcastEpisode extends \yii\db\ActiveRecord
 {
@@ -187,7 +189,7 @@ class PodcastEpisode extends \yii\db\ActiveRecord
      * @return Podcast
      */
     public function getPodcast() {
-        return Podcast::defaultPodcast();
+        return $this->hasOne(Podcast::class, ['id' => 'podcast_id']);
     }
 
     public function applyDefaults() {

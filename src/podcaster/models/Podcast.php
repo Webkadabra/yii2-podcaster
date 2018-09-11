@@ -34,6 +34,7 @@ use yii\helpers\ArrayHelper;
  * @property string $rss_description_append
  * @property int $published_yn
  * @property int $web_list_yn
+ * @property PodcastEpisode $episodes
  */
 class Podcast extends \yii\db\ActiveRecord
 {
@@ -102,6 +103,13 @@ class Podcast extends \yii\db\ActiveRecord
         $data = self::find()->where(['published_yn' => 1])->orderBy($nameAttribute . ' ASC')->all();
 
         return ArrayHelper::map($data, $idAttribute, $nameAttribute);
+    }
+
+    /**
+     * @return Podcast
+     */
+    public function getEpisodes() {
+        return $this->hasMany(PodcastEpisode::class, ['podcast_id' => 'id']);
     }
 
     /**
