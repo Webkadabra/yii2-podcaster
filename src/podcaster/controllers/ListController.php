@@ -84,7 +84,12 @@ class ListController  extends Controller
         if (!$episode->podcast->published_yn) {
             throw new NotFoundHttpException();
         }
-
-        return $this->render('episode', ['model' => $episode]);
+        $dataProvider = new ActiveDataProvider([
+            'models' => $episode->podcast->episodes
+        ]);
+        return $this->render('episode', [
+            'dataProvider' => $dataProvider,
+            'model' => $episode,
+        ]);
     }
 }
