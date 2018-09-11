@@ -1,9 +1,9 @@
 {
-  "name": "webkadabra/yii2-podcaster",
+  "name": "webkadabra/podcaster",
   "description": "Yii 2 Podcast hosting module",
   "keywords": ["yii2", "framework", "podcast"],
   "homepage": "http://www.yiiframework.com/",
-  "type": "project",
+  "type": "yii2-module",
   "autoload" : {
     "psr-4" : {
       "webkadabra\\podcaster\\" : "src/podcaster"
