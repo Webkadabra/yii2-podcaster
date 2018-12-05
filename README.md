@@ -113,6 +113,14 @@ Then, run migrations from **your application root folder**:
 2. Upload your podcast episodes to a configured folder (by default, it's `media` folder in the root path of your app) with your favorite FTP client (`FileZilla` is recommended)
 3. Add podcast episodes via "Episodes" menu 
 
+## Support project development
+
+Hey guys, I'm disabled developer that can't hold a job in the office. If you can - support my opensource, I gotta keep the cats fed. Thanks!
+
+Bitcoin address (I can not accept Paypal in my country):
+
+> 1Ceg8xdYpFmyPgeqqWDBBXVztcuNsWTMpq
+
 ## TODO
 
 * Upload via UI (not supported at the moment)
