@@ -27,7 +27,7 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 This module is a standard Yii2 Application module - you can add it **to an existing Yii 2 app**. There is an example 
 application provided with the code, based on Yii 2 Basic application template. 
 
-Blow you will find instructions on how to setup both options.
+Below you will find instructions on how to setup both options.
 
 #### Option 1: Setup and run included example application
 
@@ -49,18 +49,7 @@ php composer.phar install
 
 #### Option 2: add `podcaster` module to an existing project
 
-1. First of, you have to add `webkadabra/podcaster` namespace to your composer config. Copy whole folder to the root of 
-your project, then open up your `composer.json` and add these lines:
-
-```
-"autoload" : {
-    "psr-4" : {
-      "webkadabra\\podcaster\\" : "src/podcaster"
-    }
-},
-```
-
-2. Add `podcaster` module to your config (usually it's `config/web.php` file)
+1. Add `podcaster` module to your config (usually it's `config/web.php` file)
 
 ```
 'modules' => [
@@ -72,7 +61,7 @@ your project, then open up your `composer.json` and add these lines:
 ]
 ```
 
-3. Add urlRules to your config:
+2. Add urlRules to your config:
 
 ```
 // ...
